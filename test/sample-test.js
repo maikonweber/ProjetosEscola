@@ -11,11 +11,20 @@ describe("Greeter", function () {
     const recipient = '0x2546bcd3c84621e976d8185a91a922ae77ecec30';
     const metadataUrl = 'cid/test.png';
     let balance = await school.balanceOf(recipient);
+   
 
     const newlyMintedToken = await school.payToMint(recipient, metadataUrl, {
-      value: ethers.utils.parseEther("0.5"),
+      value: ethers.utils.parseEther("0.05"),
     });
-  
+
+    await newlyMintedToken.wait();
+
+    balance = await school.balanceOf(recipient);
+    expect(balance).to.equal(1);
+
+    expect(await school.isContentOwned(metadataUrl)).to.equal(true);
+
+
   
   });
 });

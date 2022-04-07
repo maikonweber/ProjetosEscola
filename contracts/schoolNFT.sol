@@ -52,7 +52,7 @@ contract MyToken is ERC721, ERC721URIStorage, Ownable {
 
     ) public payable returns (uint256) {
         require(existingURI[metaDataURI] != 1, "NFT already minted");
-        require(msg.value > 0.05 ether, "Must send a positive amount");
+        require(msg.value >= 0.05 ether, "Must send a positive amount");
 
         uint256 newItemId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
