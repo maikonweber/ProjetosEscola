@@ -1,5 +1,6 @@
 import { ethers } from 'ethers'
 import WalletBalance  from './WalletBalance'
+
 function Home () {
     return (
         <div>
@@ -9,3 +10,5 @@ function Home () {
     )
     
 }
+
+export default Home;

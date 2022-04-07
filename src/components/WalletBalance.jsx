@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import { ethers } from 'ethers'
+import { useEffect } from 'react';
 
 
 function WalletBalance() {
-    const [balance, setBalance] = useState()
+    const [balance, setBalance] = useState('')
+
+    useEffect(() => {
+        
+    }, [balance])
 
     const getBalance = async () => {
         const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
@@ -18,7 +23,7 @@ function WalletBalance() {
         <div className='card'>
             <div>
                 <h3> Wallet Balance {balance} </h3>
-                <button onClick={getBalance}> Get Balance </button>
+                <button onClick={() => getBalance()}> Get Balance </button>
             </div>
         </div>
     )
