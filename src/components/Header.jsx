@@ -1,24 +1,28 @@
-const header = (props) => {
-    return (<>
-        <div className="header">
-            <div className="header__logo">
-                <img src={logo} alt="logo" />
-            </div>
-            <div className="header__nav">
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-        </ul> 
-        </div> 
-           </div>
-                          
-    </>)
+import { Box, Flex } from '@chakra-ui/react'
+
+const Header = (props) => {
+    return (   
+        <> 
+        <Flex 
+        bg='red'
+        width='100%'
+        height={['50px', '50px', '50px', '100px', '100px']}
+        alignItems='center'
+        justifyContent='center'
+        boxShadow={'xl'}
+        borderRadius={5}
+        >   
+        <Box
+        color='white'
+        fontSize={['lg', 'lg', 'lg', 'xl', 'xl']}
+        fontWeight={'bold'}
+        >
+        {props.title}
+        </Box>
+        </Flex>        
+        </>
+    )
        
 }
+
+export default Header;

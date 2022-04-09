@@ -1,7 +1,13 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
-    fonts: {
+    styles: {
+        global: {
+            body: {
+                height: "100%",
+                bg: "blue.200",
+                color: "black",
+            },fonts: {
         body: "system-ui, sans-serif",
         heading: "inherit",
         monospace: "Menlo, monospace",
@@ -19,7 +25,7 @@ const theme = extendTheme({
             muted: "#999",
         },
         background: {
-            primary: "#fff",
+            primary: "#C6CCB2",
             secondary: "#eee",
             muted: "#f6f6f6",
         },
@@ -28,13 +34,10 @@ const theme = extendTheme({
             secondary: "#666",
             muted: "#999",
         },
+    
+        
     },
-    styles: {
-        root: {
-            fontFamily: "body",
-            lineHeight: "body",
-            fontWeight: "body",
-        },
+},
     },
 });
 
