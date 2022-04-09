@@ -2,20 +2,28 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import Install from './components/Install'
 import Home from './components/Home'
-import { ChakraProvider } from '@chakra-ui/react'
-import theme from './config/config'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
+
 
 
 function App() {
 
   if (window.ethereum) {
-    return 
-    <> 
-    <ChakraProvider resetCSS theme={theme}>
-    <Home />
-    </ChakraProvider>
+    return (
+    <>  
+    <Router >
+      <Switch>
+        <Route path='/'>
+          <Home />
+        </Route>
+        </Switch>
+     </Router >
     </>
-   
+    )
   } else {
     return <Install />
   }
