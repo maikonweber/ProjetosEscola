@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import schooNFT from '../../artifacts/contracts/schoolNFT.sol/school.json'
 
 const provider = new ethers.providers.Web3Provider(window.ethereum)
-
 const signer = provider.getSigner();
+const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
 
 const contract = new ethers.Contract(contractAddress, schooNFT.abi, signer)
 
@@ -32,19 +32,17 @@ const [totalMinted, setTotalMited] = useState(0)
                     Array(totalMinted + 1).fill(0).map((_, index) => {
                         <div key={index}>
                             <NFTimage tokenId={index} >
-
                             </NFTimage>
                             </div>
 
                     })}
         </div>
     )
-    
 }
 
 
 function NFTimage ({ tokenId, getCount}) {
-    const contentId = '';
+    const contentId = 'QmP3QHdVXvFTEX2rhNY2sTZaGGXGhtrQPfE8bFFdGiDU8Z';
     const metadataUri = `${contentId}/#{tokenId}.json`;
     const imageUri = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
 

@@ -6,7 +6,7 @@ const Header = (props) => {
         <Flex 
         bg='red'
         width='100%'
-        height={['50px', '50px', '50px', '100px', '100px']}
+        height={['50px', '50px', '50px', '50px', '50px']}
         alignItems='center'
         justifyContent='center'
         boxShadow={'xl'}

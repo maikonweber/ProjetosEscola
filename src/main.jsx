@@ -12,7 +12,7 @@ import Header from './components/Header';
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <Header title='Escola'/>
+      <Header title=''/>
     <BrowserRouter>
       <Routes > 
         <Route path='/' element={<App/>} />
