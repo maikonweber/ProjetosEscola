@@ -8,7 +8,7 @@ describe("NFTMARKET", function () {
         await Market.deployed();
         const marketAddress = Market.address;
 
-        const NFT = await ethers.getContractFactory('gatoXadreNFT');
+        const NFT = await ethers.getContractFactory('gatoXadrezNFT');
         const nft = await NFT.deploy(marketAddress);
         await nft.deployed();
         const nftContractAddress = nft.address;

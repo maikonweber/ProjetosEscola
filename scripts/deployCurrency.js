@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const [owner] = await hre.ethers.getSigners();
-    console.log("owner:", owner.address);
+  console.log("owner:", owner.address);
   const currency = await hre.ethers.getContractFactory("MyToken");
   const current_ = await currency.deploy()  
 

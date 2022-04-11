@@ -94,12 +94,12 @@ contract gatoXadrezMarket is ReentrancyGuard  {
                 payable(owner).transfer(listingPrice);
                 }
 
-                function fetchMarketItem( ) public view returns (MarketItem[] memory) {
+                function fetchMarketItems() public view returns (MarketItem[] memory) {
                   uint itemCount = _itemIds.current(); // Total number of items created
                   uint unsoldItemCount  = _itemIds.current() - _itemSold.current(); // total number of items that are unsold =  total intens evert created
                   uint currentIndex = 0;
 
-                  MarketItem[] memory itens = new MarketItem[](unsoldItemCount);
+                  MarketItem[] memory items = new MarketItem[](unsoldItemCount);
                   for (uint i = 0 ; i < itemCount; i++) {
                       // loop through all items and add them to the array if they are unsold
                         // Check if the item is sold
@@ -107,11 +107,11 @@ contract gatoXadrezMarket is ReentrancyGuard  {
                     if (idMarketItem[i + 1].owner == address(0)) {
                         uint currentId = idMarketItem[i + 1].itemId;
                         MarketItem storage currentItem = idMarketItem[currentId];
-                        itens[currentIndex] = currentItem;
+                        items[currentIndex] = currentItem;
                         currentIndex += 1;
                     }
                   }
-                    return itens;   // return the array of items
+                    return items;   // return the array of items
                 }
 
                 function fetchmyNFTs() public view returns (MarketItem[] memory) {

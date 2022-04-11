@@ -7,7 +7,7 @@ describe("Greeter", function () {
     
     const [owner, addr1, addr2] = await ethers.getSigners();
 
-    const Token = await ethers.getContractFactory('colegioGatoXadrez');
+    const Token = await ethers.getContractFactory('ColegioGatoXadrez');
 
     const hardhatToken = await Token.deploy();
     const ownerBalance = await hardhatToken.balanceOf(owner.address);
