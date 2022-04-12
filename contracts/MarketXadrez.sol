@@ -81,7 +81,7 @@ contract gatoXadrezMarket is ReentrancyGuard  {
     function createMarketSale( address nftContract, uint256 itemid)  public payable nonReentrant {
                 uint price = idMarketItem[itemid].price;
                 uint tokenId = idMarketItem[itemid].tokenId;
-                require(msg.value == price, "Price must be equal to the price of the item");
+                require(msg.value >= price, "Price must be equal to the price of the item");
                 // Pay the seller the amount
 
                 idMarketItem[itemid].seller.transfer(msg.value);

@@ -38,12 +38,12 @@ module.exports = {
       chainId: 1337
     }, 
     mumbai: {
-      url: `https://mumbai.infura.io/v3/${projectId}`,
+      url: `https://polygon-mumbai.infura.io/v3/c056df343fe04736a91539be468b87ff`,
       accounts: [secret]
     },
     mainet: {
       url: `https://polygon-mainnet.infura.io/v3/${projectId}`,
-      accounts: [privateKey]
+      accounts: [secret]
     },
   },
   gasReporter: {

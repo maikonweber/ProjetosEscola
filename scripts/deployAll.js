@@ -11,7 +11,7 @@ async function main() {
   //
   // If this script is run directly using `node` you may want to call compile
   // manually to make sure everything is compiled
-  // await hre.run('compile');
+  await hre.run('compile');
 
   // We get the contract to deploy
   const school = await hre.ethers.getContractFactory("ColegioGatoXadrez");
@@ -20,7 +20,6 @@ async function main() {
   console.log("Greeter deployed to:", School.address);
 
  
-
   
   const NFTMARKET = await hre.ethers.getContractFactory("gatoXadrezMarket");
   const NFTMARKET_ = await NFTMARKET.deploy()
