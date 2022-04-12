@@ -67,7 +67,7 @@ contract gatoXadrezMarket is ReentrancyGuard  {
         IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
         
         emit MarketItemCreated(
-                itemId,
+             itemId,
              nftContract,
              tokenId,
              msg.sender,

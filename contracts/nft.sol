@@ -12,7 +12,7 @@ contract gatoXadrezNFT is ERC721URIStorage {
 
     address contractAddress;
 
-    constructor(address marketplaceAddress) ERC721("Partnerverse Tokens", "PNVT"){
+    constructor(address marketplaceAddress) ERC721("gatoXadrezNFT", "GXZT"){
        contractAddress = marketplaceAddress;
     }
 
